@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+  orthanc-43:
+    image: jodogne/orthanc-plugins
+    ports:
+      - '4243:4242'
+      - '8043:8042'
+    volumes:
+      # Config
+      - ./config/43/orthanc.json:/etc/orthanc/orthanc.json:ro
+      - ./config/43/transcodeAndForward.lua:/etc/share/orthanc/scripts/transcodeAndForward.lua
+      # Persist data
+      - ./volumes/43/:/var/lib/orthanc/db/
+    command: '/etc/orthanc --verbose'
+
+  proxy-43:
+    image: nginx:1.15-alpine
+    ports:
+      - 8003:80
+    volumes:
+      - ./config/43/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - orthanc-43
+    restart: unless-stopped

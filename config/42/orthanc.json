@@ -6,7 +6,6 @@
   "IngestTranscoding": "1.2.840.10008.1.2.4.70",
   "MaximumStorageSize": 0,
   "MaximumPatientCount": 0,
-  "LuaScripts": ["/etc/share/orthanc/scripts/transcodeAndForward.lua"],
   "Plugins": ["/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins"],
   "ConcurrentJobs": 2,
   "HttpServerEnabled": true,
@@ -31,13 +30,10 @@
   "RemoteAccessAllowed": true,
   "SslEnabled": false,
   "SslCertificate": "certificate.pem",
-  "AuthenticationEnabled": true,
+  "AuthenticationEnabled": false,
   "RegisteredUsers": {
     "T1iH2bsR": "th3C0AvI"
   },
-  "Server":"http://backend.xylexa.com/",
-  "Server_usr":"chi",
-  "Server_pwd":"chi@1234",
   "DicomModalities": {},
   "DicomModalitiesInDatabase": false,
   "DicomAlwaysAllowEcho": true,

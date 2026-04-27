@@ -17,9 +17,13 @@ services:
   proxy-42:
     image: nginx:1.15-alpine
     ports:
-      - 8002:80
+      - "80:80"   # For the redirect
+      - "443:443" # For SSL
     volumes:
       - ./config/42/nginx.conf:/etc/nginx/nginx.conf:ro
+      # MOUNT YOUR CERTS HERE:
+      - /etc/letsencrypt/live/thinkificpacsdev.duckdns.org/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
+      - /etc/letsencrypt/live/thinkificpacsdev.duckdns.org/privkey.pem:/etc/nginx/certs/privkey.pem:ro
     depends_on:
       - orthanc-42
     restart: unless-stopped

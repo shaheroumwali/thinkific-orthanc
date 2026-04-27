@@ -80,12 +80,10 @@
     "Root": "/dicom-web/",
     "EnableWado": true,
     "WadoRoot": "/wado",
-    "Host": "204.168.246.178:8002",
+    "Host": "127.0.0.1",
     "Ssl": false,
-    "StowMaxInstances": 0,
-    "StowMaxSize": 0,
+    "StowMaxInstances": 10,
+    "StowMaxSize": 10,
     "QidoCaseSensitive": false,
-    "StudiesMetadata": "Full",
-    "SeriesMetadata": "Full"
   }
 }

@@ -79,8 +79,8 @@
     "Root": "/dicom-web/",
     "EnableWado": true,
     "WadoRoot": "/wado",
-    "Host": "127.0.0.1",
-    "Ssl": false,
+    "Host": "thinkificpacsdev.duckdns.org",
+    "Ssl": true, // This ensures Orthanc generates https:// links in JSON responses
     "StowMaxInstances": 10,
     "StowMaxSize": 10,
     "QidoCaseSensitive": false

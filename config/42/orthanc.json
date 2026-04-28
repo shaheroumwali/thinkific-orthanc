@@ -30,9 +30,9 @@
   "RemoteAccessAllowed": true,
   "SslEnabled": false,
   "SslCertificate": "certificate.pem",
-  "AuthenticationEnabled": false,
+  "AuthenticationEnabled": true,
   "RegisteredUsers": {
-    "T1iH2bsR": "th3C0AvI"
+    "admin": "CtRead@Pacs2026!"
   },
   "DicomModalities": {},
   "DicomModalitiesInDatabase": false,

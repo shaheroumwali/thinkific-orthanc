@@ -7,7 +7,7 @@
   "MaximumStorageSize": 0,
   "MaximumPatientCount": 0,
   "Plugins": ["/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins"],
-  "ConcurrentJobs": 2,
+  "ConcurrentJobs": 4,
   "HttpServerEnabled": true,
   "HttpPort": 8042,
   "HttpDescribeErrors": true,
@@ -46,7 +46,7 @@
 
   "HttpVerbose": true,
 
-  "HttpTimeout": 10,
+  "HttpTimeout": 60,
   "HttpsVerifyPeers": true,
   "HttpsCACertificates": "",
   "UserMetadata": {},

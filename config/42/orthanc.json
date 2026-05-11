@@ -28,7 +28,7 @@
   "DicomScpTimeout": 30,
   "RemoteAccessAllowed": true,
   "SslEnabled": false,
-  "AuthenticationEnabled": false,
+  "AuthenticationEnabled": true,
   "RegisteredUsers": {
     "admin": "CtRead@Pacs2026!"
   },
@@ -56,7 +56,7 @@
   "LogExportedResources": false,
   "KeepAlive": true,
   "TcpNoDelay": true,
-  "HttpThreadsCount": 50,
+  "HttpThreadsCount": 16,
   "StoreDicom": true,
   "DicomAssociationCloseDelay": 5,
   "QueryRetrieveSize": 10,
@@ -68,7 +68,7 @@
   "SaveJobs": true,
   "OverwriteInstances": false,
   "MediaArchiveSize": 1,
-  "StorageAccessOnFind": "Always",
+  "StorageAccessOnFind": "Never",
   "MetricsEnabled": true,
   "DicomWeb": {
     "Enable": true,
@@ -81,6 +81,10 @@
     "StowMaxSize": 0,
     "QidoCaseSensitive": false,
     "StudiesMetadata": "Full",
-    "SeriesMetadata": "Full"
+    "SeriesMetadata": "Full",
+    "TranscodingCache": {
+      "Enable": true,
+      "MaxSize": 512
+    }
   }
 }

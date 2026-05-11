@@ -12,7 +12,8 @@ services:
       - ./config/42/transcodeAndForward.lua:/etc/share/orthanc/scripts/transcodeAndForward.lua
       # Persist data
       - ./volumes/42/:/var/lib/orthanc/db/
-    command: '/etc/orthanc --verbose'
+    command: '/etc/orthanc'
+    restart: unless-stopped
 
   proxy-42:
     image: nginx:1.15-alpine

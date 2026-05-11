@@ -2,12 +2,12 @@
   "Name": "Orthanc inside Docker",
   "StorageDirectory": "/var/lib/orthanc/db",
   "IndexDirectory": "/var/lib/orthanc/db",
-  "StorageCompression": true,
+  "StorageCompression": false,
   "IngestTranscoding": "1.2.840.10008.1.2.4.70",
   "MaximumStorageSize": 0,
   "MaximumPatientCount": 0,
   "Plugins": ["/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins"],
-  "ConcurrentJobs": 4,
+  "ConcurrentJobs": 8,
   "HttpServerEnabled": true,
   "HttpPort": 8042,
   "HttpDescribeErrors": true,
@@ -26,10 +26,8 @@
   "RleTransferSyntaxAccepted": true,
   "UnknownSopClassAccepted": false,
   "DicomScpTimeout": 30,
-
   "RemoteAccessAllowed": true,
   "SslEnabled": false,
-  "SslCertificate": "certificate.pem",
   "AuthenticationEnabled": true,
   "RegisteredUsers": {
     "admin": "CtRead@Pacs2026!"
@@ -43,9 +41,7 @@
   "OrthancPeers": {},
   "OrthancPeersInDatabase": false,
   "HttpProxy": "",
-
-  "HttpVerbose": true,
-
+  "HttpVerbose": false,
   "HttpTimeout": 60,
   "HttpsVerifyPeers": true,
   "HttpsCACertificates": "",
@@ -56,11 +52,11 @@
   "StoreMD5ForAttachments": true,
   "LimitFindResults": 0,
   "LimitFindInstances": 0,
-  "LimitJobs": 10,
+  "LimitJobs": 20,
   "LogExportedResources": false,
   "KeepAlive": true,
   "TcpNoDelay": true,
-  "HttpThreadsCount": 50,
+  "HttpThreadsCount": 16,
   "StoreDicom": true,
   "DicomAssociationCloseDelay": 5,
   "QueryRetrieveSize": 10,
@@ -68,21 +64,27 @@
   "LoadPrivateDictionary": true,
   "Dictionary": {},
   "SynchronousCMove": true,
-  "JobsHistorySize": 10,
+  "JobsHistorySize": 20,
   "SaveJobs": true,
   "OverwriteInstances": false,
   "MediaArchiveSize": 1,
-  "StorageAccessOnFind": "Always",
+  "StorageAccessOnFind": "Never",
   "MetricsEnabled": true,
   "DicomWeb": {
     "Enable": true,
     "Root": "/dicom-web/",
     "EnableWado": true,
     "WadoRoot": "/wado",
-    "Host": "127.0.0.1",
+    "Host": "pacs.ctread.ca",
     "Ssl": false,
-    "StowMaxInstances": 10,
-    "StowMaxSize": 10,
-    "QidoCaseSensitive": false
+    "StowMaxInstances": 0,
+    "StowMaxSize": 0,
+    "QidoCaseSensitive": false,
+    "StudiesMetadata": "Full",
+    "SeriesMetadata": "Full",
+    "TranscodingCache": {
+      "Enable": true,
+      "MaxSize": 512
+    }
   }
 }
